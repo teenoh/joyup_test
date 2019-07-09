@@ -1,0 +1,120 @@
+.item-update__container{
+    padding: 0.5em;
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 11em;
+}
+.category-update__items{
+    padding: 1em 2em;
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: height 2s;
+
+}
+.input_container{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 0.5em;
+}
+.image_container {
+    text-align: center;
+    max-height: 11em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.category-update__container .form__field{
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 0.5em 1em;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.category-update__container .form__label{
+    font-size: 16px;
+    color: darkgray;
+    width: 100%;
+    margin: 1em;
+}
+.submit_button{
+    font-size: 14px;
+    border: 0;
+    cursor: pointer;
+    border-radius: 0 6px 6px 6px;
+    padding: 0.5em 1em;
+    color: white;
+    background-image: linear-gradient(to right, rgb(28,125,185), rgb(112,226,201));
+}
+.submit_button:focus,
+.submit_button:active,
+.submit_button:visited{
+    outline: 0;
+}
+.item-update__container .form__field{
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 0.5em 1em;
+    font-size: 16px;
+    font-weight: 500;
+}
+.item-update__container .form__label{
+    font-size: 16px;
+    color: darkgray;
+    width: 100%;
+    margin: 1em;
+}
+.close_save_row .submit_button,
+.item-update__container .submit_button{
+    font-size: 14px;
+    border: 0;
+    cursor: pointer;
+    border-radius: 0 6px 6px 6px;
+    padding: 0.5em 1em;
+    color: white;
+    background-image: linear-gradient(to right, rgb(28,125,185), rgb(112,226,201));
+}
+.category-update__container .form__field:focus{
+    outline: 0;
+}
+.submit_button:hover{
+    cursor: pointer;
+    color: rgb(29, 125, 185);
+    background-color: rgb(105, 226, 199);
+}
+.is_active_container {
+    border-bottom: 1px solid #e6e4e7;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+}
+
+.close_save_row{
+    min-height: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    margin: 0.5em;
+}
+
+.bodyTable .categories__wrapper {
+    padding: 0
+}
+
+.bodyTable .categories__wrapper .category-update__container{
+    padding: 0;
+    box-shadow: none !important;
+}
+
+
+@media (max-width: 480px) {
+    .bodyTable .categories__wrapper {
+        padding: 0
+    }
+}

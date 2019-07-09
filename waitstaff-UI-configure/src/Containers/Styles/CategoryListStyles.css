@@ -1,0 +1,144 @@
+/* --------- categories ------------- */
+
+.categories__wrapper {
+    padding: 2em;
+}
+
+.category__actions {
+    display: flex;
+    justify-content: space-between;
+    top: 1.5em;
+    padding: 0 15px;
+    margin: 0 7px;
+}
+.category__actions-label {
+    cursor: pointer;
+    font-weight: 600;
+
+}
+.categories__wrapper .spinner_wrapper{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:space-around;
+    align-items:center
+}
+.category__actions-edit {
+    color: #1d7db9;
+}
+.category__actions-delete {
+    color: darkgray;
+}
+
+.categories__ {
+    padding: 2em;
+}
+
+.categories__title {
+    padding: 26px 48px;
+    margin-bottom: 10px;
+}
+
+.categories__title h3 {
+    font-family: 'Rubik', sans-serif;
+    color: #1d7db9;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.categories__list {
+    padding: 1em;
+    transition-duration: 0.3s;
+}
+
+/* --------- category-row ------------- */
+
+.category-row {
+    padding: 18px 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    border-bottom: 1px solid #e8e8e8;
+    flex-wrap: wrap;
+
+}
+
+.category-row:last-child {
+    border-bottom: none;
+}
+
+/* --------- category ------------- */
+
+.category {
+    /*display: inline;*/
+    min-width: 7em;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 10px 15px;
+    margin: 6px 7px;
+    border: solid 1px #1d7db9;
+    color: #1d7db9;;
+    cursor: pointer;
+}
+
+.category--add {
+    min-width: unset;
+    display: inline;
+    background-color: #ffdbe0;
+    border: none;
+    color: #fe4c65;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.category--selected {
+    border: 0;
+    background-image: linear-gradient(to right, rgb(28,125,185), rgb(112,226,201));
+    color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+    .categories__wrapper {
+        padding: .25em;
+    }
+
+    .category-row {
+        padding: 8px 8px;
+    }
+    .categories__list {
+        padding: 0;
+    }
+
+    .category {
+        /*display: inline;*/
+        min-width: 6em;
+        font-size: 12px;
+    }
+    .category--add {
+        min-width: unset;
+        display: inline;
+        background-color: #ffdbe0;
+        border: none;
+        color: #fe4c65;
+        font-size: 16px;
+        line-height: 1;
+        font-weight: bold;
+    }
+
+    .category--selected {
+        border: 0;
+        background-image: linear-gradient(to right, rgb(28,125,185), rgb(112,226,201));
+        color: #fff;
+    }
+    .category__actions {
+        font-size: 12px;
+    }
+
+}
+
+/* --------- category ------------- */
+
+

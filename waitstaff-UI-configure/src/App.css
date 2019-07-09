@@ -1,0 +1,49 @@
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: #f1f1f1;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top:8em;
+}
+
+
+
+.header__wrapper {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index:100;
+}
+
+.header {
+  padding-top: 3em;
+  padding-bottom: 0.5em;
+  align-items: center;
+  background-color: #69e2c7;
+}
+
+
+.header__inner {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 480px) {
+
+  .container {
+    padding-top:6em;
+  }
+
+
+  .header {
+    padding-top: 1em;
+  }
+
+}

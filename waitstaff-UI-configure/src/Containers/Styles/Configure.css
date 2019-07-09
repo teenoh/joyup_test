@@ -1,0 +1,209 @@
+.config-container {
+    margin: 10px;
+}
+.configure-header {
+    -webkit-box-shadow: 1px 1px 3px rgba(201, 201, 201, 0.5);
+    box-shadow: 1px 1px 3px rgba(201, 201, 201, 0.5);
+    background: #FFFFFF;
+    padding: 15px 10px;
+    border-radius: 3px;
+}
+.configure-header .title {
+    margin: 0;
+}
+.configure-box {
+    margin-top: 15px;
+}
+.configure-box .left-column{
+    margin-right: 5px;
+}
+.configure-box .right-column {
+    margin-left: 5px;
+}
+.panel-box {
+    -webkit-box-shadow: 1px 1px 3px rgba(201, 201, 201, 0.5);
+    box-shadow: 1px 1px 3px rgba(201, 201, 201, 0.5);
+    background: #FFFFFF;
+    padding: 15px;
+    border-radius:0 5px 5px 5px ;
+    margin-bottom: 15px;
+}
+.panel-box .panel-header {
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+.panel-box .panel-header .title {
+    margin: 0;
+    color: #1D7DB9;
+    padding-bottom: 7px;
+    font-size: 16px;
+}
+.panel-box .panel-body {
+    position: relative;
+
+}
+.panel-box .panel-body .image-upload-box {
+    position: relative;
+    border-radius:0 5px 5px 5px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.panel-box .panel-body .image-upload-box img {
+    width: 100%;
+}
+.panel-box .panel-body .image-upload-box .upload-icon {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(128, 128, 128, 0.1);
+}
+.panel-box .panel-body .image-upload-box .upload-icon img {
+    width: 250px;
+    height: 250px;
+}
+.greeting-message {
+    background: rgb(185, 220, 241);
+    border-radius:0 5px 5px 5px;
+    padding: 10px;
+}
+.greeting-message textarea {
+    border: none;
+    resize: none;
+    width: 100%;
+    min-height: 50px;
+    font-size: 14px;
+    color: #222222;
+    background: transparent;
+    padding: 5px;
+    line-height: 24px;
+}
+.button-field {
+    border: 1px solid #dfdfdf;
+    border-radius:0 5px 5px 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+.button-field input {
+    width: 100%;
+    height: 45px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    color: #1D7DB9;
+}
+.panel-footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.panel-footer .button.button-spaicy {
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 5px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1d7db9+0,3ca7bf+50,43b0c0+58,69e2c7+100 */
+    background: #1d7db9; /* Old browsers */
+    background: -moz-linear-gradient(left, #1d7db9 0%, #3ca7bf 50%, #43b0c0 58%, #69e2c7 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #1d7db9 0%,#3ca7bf 50%,#43b0c0 58%,#69e2c7 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #1d7db9 0%,#3ca7bf 50%,#43b0c0 58%,#69e2c7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d7db9', endColorstr='#69e2c7',GradientType=1 ); /* IE6-9 */
+}
+
+.order-hours {
+    margin-bottom: 5px;
+}
+.order-hours .label {
+    margin-right: 10px;
+}
+.order-hours .hour-option {
+}
+.order-hours .hour-option select {
+    width: 100px;
+    height: 30px;
+    background: rgb(185, 220, 241);
+    color: #1d7db9;
+    font-size: 14px;
+    border: none;
+}
+.order-confirmation-box .greeting-message{
+    background: transparent;
+    border: 1px solid #dfdfdf;
+    padding: 10px;
+}
+
+.business-timezone {
+    border: 1px solid #efefef;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+.business-timezone .location-label {
+    width: 160px;
+    background: rgb(185, 220, 241);
+    font-size: 16px;
+    padding: 10px;
+    color: #1d7db9;
+}
+.business-timezone .timezonelist {
+    height: 100%;
+}
+.business-timezone .timezonelist select {
+    height: 40px;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    font-size: 16px;
+    color: #3ca7bf;
+}
+
+.business-week {
+    position: relative;
+    border: 1px solid #efefef;
+}
+.business-week .week-day {
+    border-bottom: 1px solid #efefef;
+}
+.business-week .week-day:last-child {
+    border-bottom: none;
+}
+.business-week .week-day .day-field {
+    width: 160px;
+    background: rgb(185, 220, 241);
+    font-size: 16px;
+    padding: 10px;
+    font-weight: normal;
+    color: #1d7db9;
+}
+.business-week .week-day .day-opening-time .openning-time-box select, .business-week .week-day .day-opening-time .openning-time-box input{
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+}
+.business-week .week-day .day-opening-time .openning-time-box select {
+    color: #3ca7bf;
+}
+.business-week .week-day .day-opening-time .openning-time-box input{ 
+    width: 50px;
+    padding-left: 5px;
+}
+.loader-mask {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background: rgba(218, 218, 218, 0.1);
+    cursor: wait;
+    z-index: 9;
+} 

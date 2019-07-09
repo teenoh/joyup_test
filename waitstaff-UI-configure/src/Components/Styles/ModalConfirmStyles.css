@@ -1,0 +1,16 @@
+.labelModalWrapper {
+    padding: 1em 1em;
+    text-align: center;
+}
+
+.labelModal {
+    font-family: 'Rubik', sans-serif;
+}
+
+.buttonActionModal {
+    font-family: 'Rubik', sans-serif;
+    padding: 1em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
