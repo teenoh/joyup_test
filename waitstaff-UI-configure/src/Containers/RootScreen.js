@@ -4,35 +4,20 @@ import FlatButton from "material-ui/FlatButton";
 import "./Styles/RootStyles.css";
 import AppBar from "@material-ui/core/AppBar";
 import Avatar from "material-ui/Avatar";
-import ActionHome from "material-ui/svg-icons/action/shopping-cart";
-import Drawer from "@material-ui/core/Drawer";
-import MenuItem from "material-ui/MenuItem";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { withStyles } from "@material-ui/core/styles";
 import Divider from "@material-ui/core/Divider";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
-import HomeIcon from "@material-ui/icons/Home"
-import SettingsIcon from "@material-ui/icons/Settings"
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import Hidden from "@material-ui/core/Hidden";
+
+import { Sidebar } from "../Components"
 
 const drawerWidth = 240;
 
 const styles = theme => ({
   root: {
     display: "flex"
-  },
-  drawer: {
-    [theme.breakpoints.up("sm")]: {
-      width: drawerWidth,
-      flexShrink: 0
-    }
   },
   appBar: {
     marginLeft: drawerWidth,
@@ -60,19 +45,10 @@ const styles = theme => ({
     }
   },
   toolbar: theme.mixins.toolbar,
-  drawerHeader: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#000051",
-    ...theme.mixins.toolbar
-  },
-  drawerPaper: {
-    width: drawerWidth
-  },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3)
+    padding: theme.spacing(3),
+    backgroundColor: '#F1F1F1',
   }
 });
 
@@ -81,39 +57,15 @@ const menuItems = [
     id: 1,
     label: "Dashboard",
     route: "dashboard",
-    icon: <HomeIcon />
+    icon: 'home'
   },
   {
     id: 2,
     label: "Configure",
     route: "configure",
-    icon: <SettingsIcon />
+    icon: 'settings'
   }
 ];
-
-const drawer = (classes, changeScreen, currScreen) => (
-  <div>
-    <div className={classes.drawerHeader}>
-      <Avatar src={"/assets/avatar.png"} />
-    </div>
-    <Divider />
-    <List>
-      {menuItems.map(({ label, id, icon, route }) => (
-        <ListItem
-          button
-          selected={currScreen == route ? true: false }
-          onClick={() => {
-            changeScreen(route);
-          }}
-          key={id}
-        >
-          <ListItemIcon>{icon}</ListItemIcon>
-          <ListItemText primary={label} />
-        </ListItem>
-      ))}
-    </List>
-  </div>
-);
 
 class Root extends Component {
   render() {
@@ -153,34 +105,14 @@ class Root extends Component {
           </Toolbar>
         </AppBar>
 
-        <nav className={classes.drawer} aria-label="sidebar-nav">
-          <Hidden smUp implementation="css">
-            <Drawer
-              variant="temporary"
-              open={isOpenMenu}
-              onClose={closeMenu}
-              classes={{
-                paper: classes.drawerPaper
-              }}
-              ModalProps={{
-                keepMounted: true
-              }}
-            >
-              {drawer(classes, changeScreen, currScreenName)}
-            </Drawer>
-          </Hidden>
-          <Hidden xsDown implementation="css">
-            <Drawer
-              classes={{
-                paper: classes.drawerPaper
-              }}
-              variant="permanent"
-              open
-            >
-              {drawer(classes, changeScreen, currScreenName)}
-            </Drawer>
-          </Hidden>
-        </nav>
+        <Sidebar
+            open={isOpenMenu}
+            closeMenu={closeMenu}
+            changeScreen={changeScreen}
+            currScreenName={currScreenName}
+            menuItems={menuItems}
+        />
+
         <main className={classes.content}>
           <div className={classes.toolbar} />
           {activeScreen}
