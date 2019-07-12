@@ -30,14 +30,6 @@ import IconButton from "@material-ui/core/IconButton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import SettingsIcon from "@material-ui/icons/Settings";
 
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogActions from "@material-ui/core/DialogActions";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-
-import FormHelperText from "@material-ui/core/FormHelperText";
 
 import { ConfigEditPopup } from '../Components'
 
@@ -45,7 +37,8 @@ const styles = theme => ({
   topCard: {
     padding: theme.spacing(2),
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    boxShadow: "1px 1px 3px rgba(201, 201, 201, 0.5)"
   },
   mr2: {
     marginRight: theme.spacing(2)
@@ -76,8 +69,11 @@ const styles = theme => ({
     marginBottom: theme.spacing(4)
   },
   statsInfo: {
-      display: 'flex',
-      alignItems: 'center'
+    display: "flex",
+    alignItems: "center"
+  },
+  boxShadow: {
+    boxShadow: "1px 1px 3px rgba(201, 201, 201, 0.5)"
   }
 });
 
@@ -154,7 +150,7 @@ class Dashboard extends Component {
     return (
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper className={classes.topCard}>
+          <Paper className={[classes.topCard, classes.boxShadow]}>
             <Grid container spacing={2}>
               <Grid className={classes.statsInfo} item xs={6} lg={2}>
                 <Typography
@@ -190,7 +186,7 @@ class Dashboard extends Component {
 
         {filteredCompanies.map(({ name, id, image }) => (
           <Grid key={id} item xs={12} md={6} lg={3}>
-            <Card>
+            <Card className={classes.card}>
               <CardHeader
                 action={
                   <IconButton
