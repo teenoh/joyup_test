@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { withStyles } from "@material-ui/core/styles";
 
-
 import { Header, Sidebar } from "../Components"
+import { constants } from "../Utils"
 
-
+const { MENU_ITEMS } = constants
 const styles = theme => ({
   root: {
     display: "flex"
@@ -18,21 +18,6 @@ const styles = theme => ({
     backgroundColor: '#F1F1F1',
   }
 });
-
-const menuItems = [
-  {
-    id: 1,
-    label: "Dashboard",
-    route: "dashboard",
-    icon: 'home'
-  },
-  {
-    id: 2,
-    label: "Configure",
-    route: "configure",
-    icon: 'settings'
-  }
-];
 
 class Root extends Component {
   render() {
@@ -60,7 +45,7 @@ class Root extends Component {
             closeMenu={closeMenu}
             changeScreen={changeScreen}
             currScreenName={currScreenName}
-            menuItems={menuItems}
+            menuItems={MENU_ITEMS}
         />
 
         <main className={classes.content}>

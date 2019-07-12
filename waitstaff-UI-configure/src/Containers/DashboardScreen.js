@@ -13,7 +13,9 @@ import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 
 import { AgencyCard, ConfigEditPopup } from "../Components";
+import { constants } from "../Utils";
 
+const { AGENCIES } = constants;
 const styles = theme => ({
   topCard: {
     padding: theme.spacing(2),
@@ -39,43 +41,12 @@ const styles = theme => ({
   }
 });
 
-const companies = [
-  {
-    id: 1,
-    name: "Pizza Hut",
-    image:
-      "https://banner2.kisspng.com/20180807/wo/kisspng-pizza-hut-logo-symbol-food-fair-lakes-pizza-hut-5b693b93c0d2c3.3095130015336231877898.jpg"
-  },
-  {
-    id: 2,
-    name: "KFC",
-    image:
-      "https://www.clipartmax.com/png/middle/435-4357552_nyancraftergs-profile-member-list-minecraft-forum-transparent-background-kfc-logo.png"
-  },
-  {
-    id: 3,
-    name: "Burger King",
-    image:
-      "http://images6.fanpop.com/image/photos/39800000/Burger-King-Logo-3-nintendofan12-5-39800948-300-300.png"
-  },
-  {
-    id: 4,
-    name: "McDonalds",
-    image:
-      "https://listimg.pinclipart.com/picdir/s/341-3414499_brand-logo-mcdonalds-logo-circle-clipart.png"
-  },
-  {
-    id: 5,
-    name: "Starbucks",
-    image:
-      "https://diylogodesigns.com/wp-content/uploads/2018/09/Starbucks_Coffee_Logo.png-768x768.png"
-  }
-];
+
 
 class Dashboard extends Component {
   state = {
     dialogOpen: false,
-    activeCompany: null,
+    activeAgency: null,
     fbAcct: "pizza",
     sqAcct: "sq1",
     searchTxt: ""
@@ -89,8 +60,8 @@ class Dashboard extends Component {
     this.setState({ dialogOpen: false });
   };
 
-  setActiveCompany = company => {
-    this.setState({ activeCompany: company });
+  setActiveAgency = agency => {
+    this.setState({ activeAgency: agency });
     this.openDialog();
   };
 
@@ -103,12 +74,13 @@ class Dashboard extends Component {
   render() {
     const { classes } = this.props;
     const { searchTxt } = this.state;
-    const filteredCompanies = companies.filter(company =>
-      company.name
+    const filteredAgencies = AGENCIES.filter(agency =>
+      agency.name
         .trim()
         .toLowerCase()
         .includes(searchTxt.toLowerCase())
     );
+    console.log(filteredAgencies)
     return (
       <Grid container spacing={3}>
         <Grid item xs={12}>
@@ -144,11 +116,11 @@ class Dashboard extends Component {
           </Paper>
         </Grid>
 
-        {filteredCompanies.map(({ name, id, image }) => (
+        {filteredAgencies.map(({ name, id, image }) => (
           <Grid key={id} item xs={12} md={6} lg={3}>
             <AgencyCard
-              company={{ name, id, image }}
-              setActiveCompany={this.setActiveCompany}
+              agency={{ name, id, image }}
+              setActiveAgency={this.setActiveAgency}
             />
           </Grid>
         ))}
@@ -156,7 +128,7 @@ class Dashboard extends Component {
         <ConfigEditPopup
           open={this.state.dialogOpen}
           handleClose={this.closeDialog}
-          company={this.state.activeCompany}
+          agency={this.state.activeAgency}
           activeFbAcct={this.state.fbAcct}
           activeSqAcct={this.state.sqAcct}
           handleChange={this.handleChange}

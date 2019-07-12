@@ -18,7 +18,7 @@ const styles = theme => ({
     justifyContent: "center",
     alignItems: "center"
   },
-  companyLogo: {
+  agencyLogo: {
     height: 100,
     width: 100,
     borderRadius: "50%"
@@ -35,14 +35,14 @@ const styles = theme => ({
   }
 });
 
-const AgencyCard = ({ classes, setActiveCompany, company }) => {
-    const {id, image, name} = company
+const AgencyCard = ({ classes, setActiveAgency, agency }) => {
+    const {id, image, name} = agency
     return (
       <Card className={classes.card}>
         <CardHeader
           action={
             <IconButton
-              onClick={() => setActiveCompany(company)}
+              onClick={() => setActiveAgency(agency)}
               aria-label="Settings"
             >
               <SettingsIcon />
@@ -50,7 +50,7 @@ const AgencyCard = ({ classes, setActiveCompany, company }) => {
           }
         />
         <CardContent className={classes.cardContent}>
-          <Avatar src={image} className={classes.companyLogo} />
+          <Avatar src={image} className={classes.agencyLogo} />
           <Typography color="primary" variant="h6">
             {name}
           </Typography>

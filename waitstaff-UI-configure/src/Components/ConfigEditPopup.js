@@ -35,7 +35,7 @@ const styles = theme => ({
 const ConfigEditPopup = ({
   activeFbAcct,
   activeSqAcct,
-  company,
+  agency,
   classes,
   handleClose,
   handleChange,
@@ -43,12 +43,12 @@ const ConfigEditPopup = ({
 }) => {
   return (
     <Dialog maxWidth="xs" fullWidth={true} open={open} onClose={handleClose}>
-      <DialogTitle>{`Edit ${company &&
-        company.name} configuration`}</DialogTitle>
+      <DialogTitle>{`Edit ${agency &&
+        agency.name} configuration`}</DialogTitle>
       <DialogContent>
         <div className={classes.logoContainer}>
           <Avatar
-            src={company && company.image}
+            src={agency && agency.image}
             className={classes.logo}
           />
         </div>
