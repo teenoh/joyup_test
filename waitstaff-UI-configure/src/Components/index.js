@@ -1,3 +1,4 @@
 import ConfigEditPopup from './ConfigEditPopup'
+import Sidebar from './Sidebar'
 
-export { ConfigEditPopup };
+export { ConfigEditPopup, Sidebar };
