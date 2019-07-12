@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^4.2.1",
     "apisauce": "^0.14.3",
     "loadash": "^1.0.0",
     "lodash": "^4.17.11",
@@ -10,18 +12,31 @@
     "mobx": "^3.6.1",
     "mobx-react": "^4.4.2",
     "moment": "^2.22.2",
-    "react": "^16.2.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
     "react-beautiful-dnd": "^5.0.0",
     "react-device-detect": "^0.1.0",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.8.6",
     "react-dropzone": "7.0.1",
     "react-file-reader": "^1.1.4",
-    "react-scripts": "1.1.1"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
