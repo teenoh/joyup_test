@@ -5,18 +5,23 @@ import ItemListScreen from '../Containers/ItemListScreen';
 import CategoryUpdateScreen from '../Containers/CategoryUpdateScreen';
 import ItemUpdateScreen from '../Containers/ItemUpdateScreen';
 import Configure from '../Containers/Configure'
+import Dashboard from '../Containers/DashboardScreen'
 import ApiConfig from '../Config/ApiConfig';
+
 const Views = {
     category:<CategoryListScreen/>,
     updateCategory:<CategoryUpdateScreen/>,
     item:<ItemListScreen/>,
     itemUpdate: <ItemUpdateScreen/>,
-    configure: <Configure/>
+    configure: <Configure/>,
+    dashboard: <Dashboard />,
 };
+
 class NavigationStore {
   constructor () {
     extendObservable(this, {
-      activeScreen: Views.configure,
+      activeScreen: Views.dashboard,
+      currScreenName: 'dashboard',
       prevScreenName: '',
       isOpenMenu:false,
       changeScreen:action((screenName, prevScreenName = null) => {
@@ -24,7 +29,9 @@ class NavigationStore {
           const newScreen = Views[screenName];
           if (newScreen) {
              this.isOpenMenu = false;
-            this.activeScreen = newScreen;
+             this.currScreenName = screenName
+             this.activeScreen = newScreen;
+
           }
       }),
       openMenu:action(() => {
