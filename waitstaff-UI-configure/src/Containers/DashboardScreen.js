@@ -1,37 +1,18 @@
 import React, { Component } from "react";
 import { observer, inject } from "mobx-react";
 import PropTypes from "prop-types";
-import "./Styles/grid.css";
-import "./Styles/Configure.css";
-import "./Styles/Dashboard.css";
-
-import { withStyles, makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import Divider from "@material-ui/core/Divider";
-
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
-import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
-import TextField from "@material-ui/core/TextField";
+import Grid from "@material-ui/core/Grid";
+import Input from "@material-ui/core/Input";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import InputLabel from "@material-ui/core/InputLabel";
+import Paper from "@material-ui/core/Paper";
 import SearchIcon from "@material-ui/icons/Search";
-import IconButton from "@material-ui/core/IconButton";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import SettingsIcon from "@material-ui/icons/Settings";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@material-ui/core/styles";
 
-
-import { ConfigEditPopup } from '../Components'
+import { AgencyCard, ConfigEditPopup } from "../Components";
 
 const styles = theme => ({
   topCard: {
@@ -42,25 +23,6 @@ const styles = theme => ({
   },
   mr2: {
     marginRight: theme.spacing(2)
-  },
-  media: {
-    height: 0,
-    paddingTop: "56.25%" // 16:9
-  },
-  cardContent: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  companyLogo: {
-    height: 100,
-    width: 100,
-    borderRadius: "50%"
-  },
-  newBtn: {
-    background: "linear-gradient(to right, #000051 0%,  #69e2c7 90%)",
-    marginLeft: "auto"
   },
   formControl: {
     width: "100%"
@@ -127,10 +89,10 @@ class Dashboard extends Component {
     this.setState({ dialogOpen: false });
   };
 
-  setActiveCompany = (company) => {
-      this.setState({ activeCompany: company})
-      this.openDialog()
-  }
+  setActiveCompany = company => {
+    this.setState({ activeCompany: company });
+    this.openDialog();
+  };
 
   handleChange = (name, value) => {
     this.setState({ [name]: value });
@@ -160,9 +122,7 @@ class Dashboard extends Component {
                 >
                   All Users
                 </Typography>
-                <Typography component="h5">
-                  8 total
-                </Typography>
+                <Typography component="h5">8 total</Typography>
               </Grid>
               <Grid item xs={12} md={4} lg={3}>
                 <FormControl fullWidth>
@@ -186,46 +146,20 @@ class Dashboard extends Component {
 
         {filteredCompanies.map(({ name, id, image }) => (
           <Grid key={id} item xs={12} md={6} lg={3}>
-            <Card className={classes.card}>
-              <CardHeader
-                action={
-                  <IconButton
-                    onClick={() => this.setActiveCompany({name, id, image})}
-                    aria-label="Settings"
-                  >
-                    <SettingsIcon />
-                  </IconButton>
-                }
-              />
-              <CardContent className={classes.cardContent}>
-                <Avatar src={image} className={classes.companyLogo} />
-                <Typography color="primary" variant="h6">
-                  {name}
-                </Typography>
-              </CardContent>
-              <Divider light />
-              <CardActions>
-                <Typography variant="body1">Marvel Comics</Typography>
-                <Button
-                  className={classes.newBtn}
-                  size="small"
-                  color="primary"
-                  variant="contained"
-                >
-                  New
-                </Button>
-              </CardActions>
-            </Card>
+            <AgencyCard
+              company={{ name, id, image }}
+              setActiveCompany={this.setActiveCompany}
+            />
           </Grid>
         ))}
-       
-        <ConfigEditPopup 
-            open={this.state.dialogOpen}
-            handleClose={this.closeDialog}
-            company={this.state.activeCompany}
-            activeFbAcct={this.state.fbAcct}
-            activeSqAcct={this.state.sqAcct}
-            handleChange={this.handleChange}
+
+        <ConfigEditPopup
+          open={this.state.dialogOpen}
+          handleClose={this.closeDialog}
+          company={this.state.activeCompany}
+          activeFbAcct={this.state.fbAcct}
+          activeSqAcct={this.state.sqAcct}
+          handleChange={this.handleChange}
         />
       </Grid>
     );

@@ -27,6 +27,7 @@
     padding: 15px;
     border-radius:0 5px 5px 5px ;
     margin-bottom: 15px;
+    flex: 1;
 }
 .panel-box .panel-header {
     padding-bottom: 10px;
@@ -47,32 +48,53 @@
     border-radius:0 5px 5px 5px;
     overflow: hidden;
     margin-bottom: 5px;
-}
-.panel-box .panel-body .image-upload-box img {
     width: 100%;
 }
+
+/* .panel-box .panel-body .image-upload-box img {
+    width: 100%;
+} */
+
 .panel-box .panel-body .image-upload-box .upload-icon {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.panel-box .panel-body .image-upload-box .upload-icon .overlay {
+    position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
     right: 0;
     height: 100%;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: rgba(128, 128, 128, 0.1);
 }
+
 .panel-box .panel-body .image-upload-box .upload-icon img {
     width: 250px;
     height: 250px;
+    text-align: center;
+}
+/* assign height and width to this */
+.panel-box .panel-body .image-upload-box .upload-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel-box .panel-body .image-upload-box .upload-img img {
+    width: 250px;
+    height: 250px;
+    text-align: center;
 }
 .greeting-message {
     background: rgb(185, 220, 241);
     border-radius:0 5px 5px 5px;
     padding: 10px;
 }
+
 .greeting-message textarea {
     border: none;
     resize: none;
